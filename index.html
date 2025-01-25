@@ -3,103 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kursportal</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="./src/index.js"></script>
+    <title>Start - Utbildningsportal</title>
+    <link rel="stylesheet" href="./src/styles/styles.css" />
   </head>
+
   <body>
-    <header>
-      <div class="logo">Kursportalen</div>
-      <nav>
-        <ul>
-          <li><a href="#">Hem</a></li>
-          <li><a href="#">Kurser</a></li>
-          <li><a href="#">Om oss</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
-      </nav>
-    </header>
+    <!-- Navigeringsmeny -->
+    <nav>
+      <ul>
+        <li><a href="#">Hem</a></li>
+        <li><a href="#">Kurser</a></li>
+        <li><a href="#">Logga in</a></li>
+      </ul>
+    </nav>
 
-    <main>
-      <section class="courses-section">
-        <h1>Våra Kurser</h1>
-        <div class="courses-container">
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Webbutveckling 101</h2>
-            <p>Introduktion till webbutveckling.</p>
-          </div>
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Avancerad JavaScript</h2>
-            <p>Fördjupa dig i JavaScript.</p>
-          </div>
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Responsiv Design</h2>
-            <p>Skapa responsiva webbplatser.</p>
-          </div>
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Databashantering</h2>
-            <p>Grundläggande SQL och databaser.</p>
-          </div>
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Python för Nybörjare</h2>
-            <p>Enkla steg för att lära dig Python.</p>
-          </div>
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Projektledning</h2>
-            <p>Lär dig agil projektledning.</p>
-          </div>
-        </div>
-      </section>
+    <!-- Hero Section - Stor bild -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Välkommen till vår utbildningsportal!</h1>
+        <p>Utforska våra kurser och ta nästa steg i din karriär.</p>
+        <a href="#register" class="cta-button">Registrera dig</a>
+      </div>
+    </section>
 
-      <section class="popular-section">
-        <h1>Populära Kurser</h1>
-        <div class="courses-container">
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Webbsäkerhet</h2>
-            <p>Skydda din webbplats mot attacker.</p>
-          </div>
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>Introduktion till AI</h2>
-            <p>Lär dig grunderna inom AI.</p>
-          </div>
-          <div class="course-card">
-            <img src="https://via.placeholder.com/300x180" alt="Kursbild" />
-            <h2>UX/UI Design</h2>
-            <p>Skapa användarvänliga gränssnitt.</p>
-          </div>
-        </div>
-      </section>
-
-      <section class="booking-section">
-        <h1>Boka en Kurs</h1>
-        <form class="booking-form">
-          <label for="name">Namn</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="address">Faktureringsadress</label>
-          <input type="text" id="address" name="address" required />
-
-          <label for="email">E-postadress</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="phone">Mobilnummer</label>
-          <input type="tel" id="phone" name="phone" required />
-
-          <button type="submit">Boka Nu</button>
-        </form>
-      </section>
-    </main>
-
+    <!-- Resten av sidan -->
     <footer>
-      <p>&copy; 2025 Kursportalen. Alla rättigheter reserverade.</p>
+      <p>© 2025 Utbildningsportal AB</p>
     </footer>
   </body>
 </html>
