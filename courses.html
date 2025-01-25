@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <script type="module" src="./src/courses.js" defer></script>
+    <title>Courses</title>
+  </head>
+  <body>
+    <h1>Courses</h1>
+    <ul id="courses"></ul>
+    <form id="new-course">
+      <input type="text" name="title" placeholder="Course Title" required />
+      <input
+        type="text"
+        name="description"
+        placeholder="Description"
+        required />
+      <input
+        type="number"
+        name="duration"
+        placeholder="Duration (hours)"
+        required />
+      <button type="submit">Add Course</button>
+    </form>
+    <button id="delete">Delete Course</button>
+    <button id="update">Update Course</button>
+  </body>
+</html>

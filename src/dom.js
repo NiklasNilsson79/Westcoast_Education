@@ -1,17 +1,14 @@
-export function renderCourses(courses) {
-  const courseContainer = document.getElementById('course-container');
-  courseContainer.innerHTML = courses
+export const createCourseDisplay = (courses) => {
+  return courses
     .map(
       (course) => `
-      <div class="course">
-        <img src="${course.image}" alt="${course.title}">
+      <li>
         <h2>${course.title}</h2>
-        <p>Kursnummer: ${course.number}</p>
-        <p>Antal dagar: ${course.days}</p>
-        <p>Typ: ${course.type}</p>
-        <p>Datum: ${course.date}</p>
-      </div>
+        <p>${course.description}</p>
+        <p>Duration: ${course.duration} hours</p>
+        <img src="${course.imageUrl}" alt="${course.title}" width="150">
+      </li>
     `
     )
     .join('');
-}
+};
