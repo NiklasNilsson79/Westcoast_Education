@@ -1,0 +1,22 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "JavaScript för nybörjare",
+      "number": "JS101",
+      "days": 3,
+      "availableOnline": true,
+      "image": "url-till-bild",
+      "dates": ["2025-02-15", "2025-03-10"]
+    },
+    {
+      "id": 2,
+      "title": "HTML & CSS från grunden",
+      "number": "HTMLCSS201",
+      "days": 2,
+      "availableOnline": false,
+      "image": "url-till-bild",
+      "dates": ["2025-02-20", "2025-03-15"]
+    }
+  ]
+}
