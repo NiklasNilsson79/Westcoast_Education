@@ -3,11 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link rel="stylesheet" href="./src/styles/courses.css" />
     <script type="module" src="./src/courses.js" defer></script>
     <title>Courses</title>
   </head>
   <body>
+    <!-- Navigeringsmeny -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="courses.html">Kurser</a></li>
+        <li><a href="#">Logga in</a></li>
+      </ul>
+    </nav>
+
     <h1>Courses</h1>
     <ul id="courses"></ul>
     <form id="new-course">
@@ -26,5 +35,9 @@
     </form>
     <button id="delete">Delete Course</button>
     <button id="update">Update Course</button>
+
+    <footer>
+      <p>© 2025 Utbildningsportal AB</p>
+    </footer>
   </body>
 </html>

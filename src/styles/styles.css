@@ -1,108 +1,116 @@
-/* Lista för kurser */
-#courses {
-  margin: 20px auto;
-  width: 80%;
-  max-width: 1000px;
-  list-style: none;
+/* Grundläggande stil för hela sidan */
+* {
+  margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  box-sizing: border-box;
 }
 
-#courses li {
-  background-color: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+nav {
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding: 15px;
   text-align: center;
+  z-index: 2;
 }
 
-#courses img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 15px;
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
 }
 
-#courses h3 {
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
   font-size: 18px;
-  margin: 10px 0;
 }
 
-#courses p {
-  font-size: 14px;
-  color: #666;
+.hero-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  color: white;
 }
 
-/* Formulär */
-form {
-  width: 80%;
-  max-width: 500px;
-  margin: 20px auto;
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  color: #333;
-}
-
-form input,
-form select,
-form textarea {
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: #ff6600;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #e65c00;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
   padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin-top: auto;
+  z-index: 2;
 }
 
-form button {
-  background-color: #007bff;
+.course-section {
+  margin-top: 50px;
+  text-align: block;
+  font-family: Arial, sans-serif;
+  background-color: #486ad7;
+  padding: 20px;
+  display: flex;
+}
+
+.new-course {
+  background-color: #ff6600;
   color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
+  padding: 15px 30px;
+  font-size: 20px;
+  text-decoration: none;
   border-radius: 5px;
-  cursor: pointer;
   transition: background-color 0.3s;
-}
-
-form button:hover {
-  background-color: #0056b3;
-}
-
-/* Knappar */
-#delete,
-#update {
-  margin: 10px;
-  padding: 10px 15px;
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#delete:hover,
-#update:hover {
-  background-color: #a71d2a;
-}
-
-#update {
-  background-color: #28a745;
-}
-
-#update:hover {
-  background-color: #1e7e34;
 }

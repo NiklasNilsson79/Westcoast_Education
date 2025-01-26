@@ -41,20 +41,6 @@
       "description": "Utforska grunderna i blockchain och dess olika användningsområden.",
       "duration": "6 veckor",
       "imageUrl": "blockchain-course.jpg"
-    },
-    {
-      "id": 7,
-      "title": "Avancerad CSS och SASS",
-      "description": "Ta din CSS till nästa nivå med avancerade tekniker och SASS.",
-      "duration": "6 veckor",
-      "imageUrl": "sass-course.jpg"
-    },
-    {
-      "id": 8,
-      "title": "Mobilapputveckling med Flutter",
-      "description": "Lär dig bygga appar för iOS och Android med Flutter.",
-      "duration": "8 veckor",
-      "imageUrl": "flutter-course.jpg"
     }
   ]
 }
