@@ -59,6 +59,7 @@ nav ul li a {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  z-index: 2;
 }
 
 #courses li {
@@ -192,4 +193,13 @@ form {
   flex-wrap: nowrap;
   width: 100%;
   max-width: 100%; /* Förhindrar att formuläret blir för brett */
+}
+
+.cover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
