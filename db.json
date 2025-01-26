@@ -4,42 +4,42 @@
       "id": 1,
       "title": "Introduktion till JavaScript",
       "description": "Lär dig grunderna i JavaScript, ett av de mest populära programmeringsspråken.",
-      "duration": "6 veckor",
+      "duration": "65",
       "imageUrl": "javascript-course.jpg"
     },
     {
       "id": 2,
       "title": "Webbutveckling med HTML och CSS",
       "description": "Bygg snygga och responsiva webbplatser med HTML och CSS.",
-      "duration": "4 veckor",
+      "duration": "48",
       "imageUrl": "html-css-course.jpg"
     },
     {
       "id": 3,
       "title": "Grundläggande Python-programmering",
       "description": "En introduktionskurs till Python, perfekt för nybörjare.",
-      "duration": "8 veckor",
+      "duration": "80",
       "imageUrl": "python-course.jpg"
     },
     {
       "id": 4,
       "title": "Databashantering med MySQL",
       "description": "Lär dig att skapa, hantera och använda databaser med MySQL.",
-      "duration": "5 veckor",
+      "duration": "50",
       "imageUrl": "mysql-course.jpg"
     },
     {
       "id": 5,
       "title": "Bygg applikationer med React",
       "description": "Upptäck hur du skapar interaktiva användargränssnitt med React.",
-      "duration": "7 veckor",
+      "duration": "70",
       "imageUrl": "react-course.jpg"
     },
     {
       "id": 6,
       "title": "Introduktion till Blockchain-teknik",
       "description": "Utforska grunderna i blockchain och dess olika användningsområden.",
-      "duration": "6 veckor",
+      "duration": "60",
       "imageUrl": "blockchain-course.jpg"
     }
   ]

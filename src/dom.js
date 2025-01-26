@@ -5,7 +5,7 @@ export const createCourseDisplay = (courses) => {
       <li>
         <h2>${course.title}</h2>
         <p>${course.description}</p>
-        <p>Duration: ${course.duration} hours</p>
+        <p>Duration: ${course.duration} timmar </p>
         <img src="${course.imageUrl}" alt="${course.title}" width="150">
       </li>
     `
