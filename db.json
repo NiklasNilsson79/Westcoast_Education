@@ -41,6 +41,13 @@
       "description": "Utforska grunderna i blockchain och dess olika användningsområden.",
       "duration": "60",
       "imageUrl": "../images/blockchain.jpeg"
+    },
+    {
+      "id": "7",
+      "imageUrl": "./images/no-img.jpg",
+      "title": "Träslöjd",
+      "description": "Jobba med trä, va inte disträ",
+      "duration": 500
     }
   ]
 }

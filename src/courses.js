@@ -52,7 +52,11 @@ const addCourse = async (course) => {
     }
 
     // Tilldela nästa lediga ID till kursen som en sträng
-    const newCourse = { id: nextId, ...course };
+    const newCourse = {
+      id: nextId,
+      imageUrl: './images/no-img.jpg',
+      ...course,
+    };
 
     const response = await fetch('http://localhost:3001/courses', {
       method: 'POST',
