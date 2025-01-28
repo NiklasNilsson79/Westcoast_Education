@@ -129,3 +129,36 @@ footer {
   margin-top: 10px;
   border-radius: 5px;
 }
+
+/*details*/
+#course-details {
+  width: 80%; /* Sätt en maxbredd på 80% av sidan */
+  margin: 0 auto; /* Centrerar innehållet på sidan */
+  padding: 20px; /* Lägg till lite inre avstånd så att texten inte sitter klistrad vid kanten */
+  background-color: #458399; /* Ljus bakgrundsfärg för att få innehållet att sticka ut */
+  border-radius: 8px; /* Rundade hörn för ett mjukare utseende */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* En liten skugga för att skapa ett lyft effekt */
+}
+
+#course-title {
+  margin-top: 70px;
+  font-size: 2em; /* Större rubrikstorlek för titeln */
+  margin-bottom: 10px; /* Lägg till lite mellanrum under titeln */
+}
+
+#course-description {
+  font-size: 1.2em; /* Första textstorleken för beskrivningen */
+  margin-bottom: 20px; /* Mellanrum efter beskrivningen */
+}
+
+#course-duration {
+  font-size: 1.1em; /* Större text för varaktighet */
+  color: #555; /* Dämpad färg för varaktigheten */
+}
+
+#course-image img {
+  max-width: 50%; /* Gör att bilden kan anpassas till bredden */
+  height: auto; /* Låter höjden justeras automatiskt */
+  border-radius: 8px; /* Lägg till rundade hörn på bilden */
+  margin-top: 20px; /* Lägg till lite mellanrum ovanför bilden */
+}

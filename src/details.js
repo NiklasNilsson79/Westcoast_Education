@@ -1,37 +1,52 @@
-// Hämta kurs-ID från URL:en
-const params = new URLSearchParams(window.location.search);
-const courseId = params.get('id');
+// Importera mapData från services.js om du vill använda den
+// import { mapData } from './services.js';
 
-// Element på sidan
-const courseTitle = document.getElementById('course-title');
-const courseDescription = document.getElementById('course-description');
-const courseDuration = document.getElementById('course-duration');
+// Funktion för att hämta kursens ID från URL-parameter
+const getCourseIdFromUrl = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get('id');
+};
 
-// Funktion för att hämta kursdetaljer från JSON-servern
-const fetchCourseDetails = async (id) => {
+// Funktion för att hämta kursdetaljer från servern
+const fetchCourseDetails = async () => {
+  const courseId = getCourseIdFromUrl(); // Hämta ID från URL
+  if (!courseId) {
+    alert('Ingen kurs ID angiven.');
+    return;
+  }
+
   try {
-    const response = await fetch(`http://localhost:3001/courses/${id}`);
-    if (!response.ok) throw new Error('Kursen kunde inte laddas.');
-    const course = await response.json();
-    renderCourseDetails(course);
+    const response = await fetch(`http://localhost:3001/courses/${courseId}`);
+    const data = await response.json();
+
+    if (!data) {
+      alert('Kursen hittades inte.');
+      return;
+    }
+
+    // Nu använder vi direkt displayCourseDetails för att visa kursen
+    displayCourseDetails(data);
   } catch (error) {
-    courseTitle.textContent = 'Ett fel inträffade.';
     console.error('Error fetching course details:', error);
+    alert('Ett fel inträffade vid hämtning av kursen.');
   }
 };
 
-// Funktion för att rendera kursdetaljer
-const renderCourseDetails = (course) => {
-  courseTitle.textContent = course.title;
-  courseDescription.textContent = `Beskrivning: ${course.description}`;
-  courseDuration.textContent = `Varaktighet: ${course.duration} timmar`;
+// Funktion för att visa kursens detaljer på sidan
+const displayCourseDetails = (course) => {
+  document.getElementById('course-title').textContent = course.title;
+  document.getElementById('course-description').textContent =
+    course.description;
+  document.getElementById(
+    'course-duration'
+  ).textContent = `Varaktighet: ${course.duration} timmar`;
+
+  // Visa kursens bild
+  const courseImage = document.createElement('img');
+  courseImage.src = course.imageUrl;
+  courseImage.alt = course.title;
+  document.getElementById('course-image').appendChild(courseImage);
 };
 
-// Hämta och visa kursdetaljer vid sidladdning
-document.addEventListener('DOMContentLoaded', () => {
-  if (courseId) {
-    fetchCourseDetails(courseId);
-  } else {
-    courseTitle.textContent = 'Ingen kurs hittades.';
-  }
-});
+// Hämta kursdetaljer när sidan laddas
+document.addEventListener('DOMContentLoaded', fetchCourseDetails);
