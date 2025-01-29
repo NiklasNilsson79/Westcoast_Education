@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logga in / Registrera dig</title>
+    <link rel="stylesheet" href="./src/styles/log-in.css" />
+    <script src="./src/log-in.js" defer></script>
+  </head>
+
+  <body class="index">
+    <!-- Navigeringsmeny -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="courses.html">Kurser</a></li>
+        <li><a href="log-in.html">Logga in</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="form-container">
+        <h1>Välkommen!</h1>
+
+        <!-- Inloggningsformulär -->
+        <div class="form" id="login-form">
+          <h2>Logga in</h2>
+          <form action="#" method="POST">
+            <div class="input-group">
+              <label for="login-email">E-post</label>
+              <input type="email" id="login-email" name="email" required />
+            </div>
+            <div class="input-group">
+              <label for="login-password">Lösenord</label>
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                required />
+            </div>
+            <button type="submit">Logga in</button>
+            <p>
+              Har du inget konto?
+              <a href="javascript:void(0);" onclick="toggleForms()"
+                >Registrera dig här</a
+              >
+            </p>
+          </form>
+        </div>
+
+        <!-- Registreringsformulär -->
+        <div class="form" id="register-form" style="display: none">
+          <h2>Registrera dig</h2>
+          <form action="#" method="POST">
+            <div class="input-group">
+              <label for="register-name">Namn</label>
+              <input type="text" id="register-name" name="name" required />
+            </div>
+            <div class="input-group">
+              <label for="register-email">E-post</label>
+              <input type="email" id="register-email" name="email" required />
+            </div>
+            <div class="input-group">
+              <label for="register-password">Lösenord</label>
+              <input
+                type="password"
+                id="register-password"
+                name="password"
+                required />
+            </div>
+            <div class="input-group">
+              <label for="register-password-confirm">Bekräfta lösenord</label>
+              <input
+                type="password"
+                id="register-password-confirm"
+                name="password-confirm"
+                required />
+            </div>
+            <button type="submit">Registrera</button>
+            <p>
+              Har du redan ett konto?
+              <a href="javascript:void(0);" onclick="toggleForms()"
+                >Logga in här</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2025 Westcoas Education AB</p>
+    </footer>
+  </body>
+</html>

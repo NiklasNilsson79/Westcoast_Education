@@ -4,11 +4,20 @@
   box-sizing: border-box;
 }
 
+body #courses li {
+  background-color: #135c97 !important;
+}
+
 body {
   font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    #0099ff,
+    #ffffff
+  ); /* Ljusblått till vitt gradient */
 }
 
 h1 {
@@ -62,7 +71,6 @@ nav ul li a {
 }
 
 #courses li {
-  background-color: #f9f9f9;
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

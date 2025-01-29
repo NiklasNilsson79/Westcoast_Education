@@ -2,20 +2,30 @@ import { createCourseDisplay } from './dom.js';
 
 // Funktion för att hämta kurser från JSON-servern
 const fetchCourses = async () => {
+  const coursesElement = document.getElementById('courses');
+  coursesElement.innerHTML = '<li>Loading...</li>'; // Visa en "laddar" meddelande innan kurserna hämtas
+
   try {
     const response = await fetch('http://localhost:3001/courses');
+
+    // Kontrollera om svaret är ok (status 200-299)
+    if (!response.ok) {
+      throw new Error(
+        'Något gick fel vid hämtning av kurser: ' + response.statusText
+      );
+    }
+
     const data = await response.json();
 
+    // Kontrollera om data är en array
     if (Array.isArray(data)) {
       createCourseDisplay(data);
     } else {
-      console.error('Data är inte en array:', data);
-      document.getElementById('courses').innerHTML =
-        '<li>Ett fel inträffade vid hämtning av kurser.</li>';
+      throw new Error('Data är inte en array.');
     }
   } catch (error) {
     console.error('Error fetching courses:', error);
-    document.getElementById('courses').innerHTML =
+    coursesElement.innerHTML =
       '<li>Ett fel inträffade vid hämtning av kurser.</li>';
   }
 };

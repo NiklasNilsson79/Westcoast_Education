@@ -162,3 +162,11 @@ footer {
   border-radius: 8px; /* Lägg till rundade hörn på bilden */
   margin-top: 20px; /* Lägg till lite mellanrum ovanför bilden */
 }
+
+.details {
+  background: linear-gradient(
+    to bottom,
+    #0099ff,
+    #ffffff
+  ); /* Ljusblått till vitt gradient */
+}
