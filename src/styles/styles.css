@@ -132,9 +132,10 @@ footer {
 
 /*details*/
 #course-details {
+  margin-left: 100px;
   width: 80%; /* Sätt en maxbredd på 80% av sidan */
-  margin: 0 auto; /* Centrerar innehållet på sidan */
-  padding: 20px; /* Lägg till lite inre avstånd så att texten inte sitter klistrad vid kanten */
+  margin-top: 100px; /* Lägg till lite mellanrum över innehållet */
+  padding: 50px; /* Lägg till lite inre avstånd så att texten inte sitter klistrad vid kanten */
   background-color: #458399; /* Ljus bakgrundsfärg för att få innehållet att sticka ut */
   border-radius: 8px; /* Rundade hörn för ett mjukare utseende */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* En liten skugga för att skapa ett lyft effekt */

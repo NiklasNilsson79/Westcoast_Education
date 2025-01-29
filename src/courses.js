@@ -137,6 +137,11 @@ document.getElementById('delete').addEventListener('click', () => {
 // Funktion för att uppdatera en kurs
 const updateCourse = async (id, updatedCourse) => {
   try {
+    // Kontrollera om updatedCourse inte har en bild, sätt den till standardbild
+    if (!updatedCourse.imageUrl || updatedCourse.imageUrl.trim() === '') {
+      updatedCourse.imageUrl = './images/no-img.jpg'; // Standardbild om ingen bild finns
+    }
+
     const response = await fetch(`http://localhost:3001/courses/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
