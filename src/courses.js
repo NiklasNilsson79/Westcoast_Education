@@ -7,28 +7,50 @@ const fetchCourses = async () => {
 
   try {
     const response = await fetch('http://localhost:3001/courses');
-
-    // Kontrollera om svaret är ok (status 200-299)
-    if (!response.ok) {
-      throw new Error(
-        'Något gick fel vid hämtning av kurser: ' + response.statusText
-      );
-    }
-
     const data = await response.json();
 
-    // Kontrollera om data är en array
     if (Array.isArray(data)) {
+      // Skapa och visa kurserna
       createCourseDisplay(data);
+
+      // Applicera hover-effekten på bilderna när de är laddade
+      addHoverEffectToImages();
     } else {
-      throw new Error('Data är inte en array.');
+      console.error('Data är inte en array:', data);
+      coursesElement.innerHTML = '<li>Det gick inte att hämta kurserna.</li>';
     }
   } catch (error) {
-    console.error('Error fetching courses:', error);
-    coursesElement.innerHTML =
-      '<li>Ett fel inträffade vid hämtning av kurser.</li>';
+    console.error('Fel vid hämtning av kurser:', error);
+    coursesElement.innerHTML = '<li>Det gick inte att hämta kurserna.</li>';
   }
 };
+
+// Funktion för att lägga till hover-effekt på bilder
+const addHoverEffectToImages = () => {
+  // Hämta alla kursbilder
+  const courses = document.querySelectorAll('#courses li');
+
+  courses.forEach((course) => {
+    const image = course.querySelector('img'); // Hitta bilden i varje kurs
+
+    if (image) {
+      // När muspekaren går över kursen (mouseenter)
+      course.addEventListener('mouseenter', () => {
+        image.style.visibility = 'visible'; // Gör bilden synlig
+        image.style.opacity = '1'; // Gör bilden fullt synlig
+      });
+
+      // När muspekaren lämnar kursen (mouseleave)
+      course.addEventListener('mouseleave', () => {
+        image.style.visibility = 'hidden'; // Döljer bilden
+        image.style.opacity = '0'; // Gör bilden osynlig
+      });
+    }
+  });
+};
+
+// Kör funktionen när sidan laddas
+fetchCourses();
 
 // Funktion för att hämta nästa lediga ID som sträng
 const getNextId = async () => {

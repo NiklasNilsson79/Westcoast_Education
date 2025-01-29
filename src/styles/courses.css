@@ -71,29 +71,62 @@ nav ul li a {
 }
 
 #courses li {
-  padding: 10px;
+  position: relative; /* Gör så att vi kan placera bilden i förhållande till listobjektet */
+  padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 100%;
+  height: 230px; /* Sätt en fast höjd för varje kursruta */
+  overflow: hidden; /* Förhindrar att innehållet flyter utanför */
+  cursor: pointer;
 }
 
 #courses img {
-  width: 80%;
-  height: auto;
-  border-radius: 8px;
+  width: 100%; /* Gör så att bilden täcker hela bredden av kursen */
+  height: 100%; /* Bilden täcker hela höjden på kursrutan */
+  position: absolute; /* Placera bilden ovanpå innehållet */
+  top: 0; /* Gör så att den startar längst upp */
+  left: 0; /* Justera så att den är till vänster */
+  visibility: hidden; /* Döljer bilden från början */
+  opacity: 0; /* Gör den osynlig till att börja med */
+  transition: opacity 0.3s, visibility 0s linear 0.3s; /* Gör övergången mjuk */
+  z-index: 0; /* Gör så att bilden ligger bakom texten */
 }
 
-#courses h3 {
-  font-size: 18px;
-  margin: 10px 0;
+/* Skugg-overlay som ger bättre läsbarhet */
+#courses li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Mörk overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
 }
 
+#courses li:hover img {
+  visibility: visible;
+  opacity: 1;
+}
+
+#courses li:hover::after {
+  opacity: 1;
+}
+
+/* Säkerställer att texten ligger över bilden */
+#courses h3,
 #courses p {
-  font-size: 14px;
-  color: #666;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  color: white; /* Gör texten vit för kontrast */
 }
 
 /* Formulär */
