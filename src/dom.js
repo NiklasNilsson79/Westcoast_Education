@@ -13,7 +13,7 @@ export const createCourseDisplay = (courses) => {
     li.innerHTML = `
       <h3>${course.title}</h3>
       <p>${course.description}</p>
-      <p>Duration: ${course.duration} hours</p>
+      <p>${course.duration} veckor</p>
       <img src="${course.imageUrl}" alt="${course.title}">
     `;
     li.addEventListener('click', () => {
@@ -22,3 +22,19 @@ export const createCourseDisplay = (courses) => {
     courseList.appendChild(li);
   });
 };
+
+// Funktion som renderar kurser
+export function renderCourses(courses) {
+  const coursesContainer = document.getElementById('courses-list'); // Exempel på en container för kurser
+  coursesContainer.innerHTML = ''; // Rensa tidigare innehåll
+
+  courses.forEach((course) => {
+    const courseElement = document.createElement('div');
+    courseElement.classList.add('course');
+    courseElement.innerHTML = `
+      <h3>${course.name}</h3>
+      <p>${course.description}</p>
+    `;
+    coursesContainer.appendChild(courseElement);
+  });
+}

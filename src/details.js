@@ -39,7 +39,7 @@ const displayCourseDetails = (course) => {
     course.description;
   document.getElementById(
     'course-duration'
-  ).textContent = `Varaktighet: ${course.duration} timmar`;
+  ).textContent = `Studieperiod ${course.duration} veckor`;
 
   // Visa kursens bild
   const courseImage = document.createElement('img');

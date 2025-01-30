@@ -4,43 +4,63 @@
       "id": "1",
       "title": "Introduktion till JavaScript",
       "description": "Lär dig grunderna i JavaScript, ett av de mest populära programmeringsspråken.",
-      "duration": "65",
+      "duration": "8",
       "imageUrl": "../images/javascript.jpg"
     },
     {
       "id": "2",
       "title": "Webbutveckling med HTML och CSS",
       "description": "Bygg snygga och responsiva webbplatser med HTML och CSS.",
-      "duration": "48",
+      "duration": "2",
       "imageUrl": "../images/html.png"
     },
     {
       "id": "3",
       "title": "Grundläggande Python-programmering",
       "description": "En introduktionskurs till Python, perfekt för nybörjare.",
-      "duration": "80",
+      "duration": "5",
       "imageUrl": "../images/php.jpg"
     },
     {
       "id": "4",
       "title": "Databashantering med MySQL",
       "description": "Lär dig att skapa, hantera och använda databaser med MySQL.",
-      "duration": "50",
+      "duration": "3",
       "imageUrl": "../images/sql.jpg"
     },
     {
       "id": "5",
       "title": "Bygg applikationer med React",
       "description": "Upptäck hur du skapar interaktiva användargränssnitt med React.",
-      "duration": "70",
+      "duration": "4",
       "imageUrl": "../images/react.jpg"
     },
     {
       "id": "6",
       "title": "Introduktion till Blockchain-teknik",
       "description": "Utforska grunderna i blockchain och dess olika användningsområden.",
-      "duration": "60",
+      "duration": "5",
       "imageUrl": "../images/blockchain.jpeg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Niklas Nilsson",
+      "email": "niklas@example.com",
+      "password": "1234"
+    },
+    {
+      "id": "ed1e",
+      "name": "Niklas Nilsson",
+      "email": "nelzonproduction@gmail.com",
+      "password": "4321"
+    },
+    {
+      "id": "81d6",
+      "name": "Kalle Anka",
+      "email": "kalle@ankeborg.se",
+      "password": "1313"
     }
   ]
 }

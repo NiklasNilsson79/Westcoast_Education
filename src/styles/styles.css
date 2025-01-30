@@ -38,6 +38,13 @@ nav ul li a {
   font-size: 18px;
 }
 
+.user-info {
+  font-weight: bold;
+  color: #333;
+  margin-left: 1000px;
+  margin-top: -20px;
+}
+
 .hero-text {
   position: absolute;
   top: 40%;
@@ -170,4 +177,13 @@ footer {
     #0099ff,
     #ffffff
   ); /* Ljusblått till vitt gradient */
+}
+
+#logout-btn {
+  margin-top: 5px;
+  margin-left: 70%;
+  background-color: #e65c00;
+  border: none;
+  padding: 3px;
+  border-radius: 5px;
 }
