@@ -189,7 +189,7 @@ document.getElementById('update').addEventListener('click', () => {
   if (id) {
     const title = prompt('Ange nytt titelvärde:');
     const description = prompt('Ange ny beskrivning:');
-    const duration = prompt('Ange ny varaktighet (timmar):');
+    const duration = prompt('Ange ny varaktighet (veckor):');
 
     if (title && description && duration) {
       const updatedCourse = {

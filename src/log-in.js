@@ -1,30 +1,53 @@
-function handleRegister(event) {
+// Funktion för att lägga till en ny användare
+const addUser = async (user) => {
+  try {
+    const response = await fetch('http://localhost:3001/users', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user),
+    });
+
+    if (!response.ok) {
+      throw new Error('Kunde inte lägga till användare.');
+    }
+
+    const addedUser = await response.json();
+    console.log('Ny användare tillagd:', addedUser);
+
+    // Visa ett meddelande om att registreringen var lyckad
+    alert('Registrering lyckades! Logga in med ditt nya konto.');
+
+    // Byt till login-formuläret
+    toggleForms();
+  } catch (error) {
+    console.error('Error adding user:', error);
+    alert('Ett fel inträffade när användaren skulle läggas till.');
+  }
+};
+
+// Lyssna på formuläret för att lägga till en användare
+document.getElementById('register-form').addEventListener('submit', (event) => {
   event.preventDefault();
 
-  const name = document.getElementById('register-name').value;
-  const email = document.getElementById('register-email').value;
-  const password = document.getElementById('register-password').value;
+  // Hämta värden från formuläret
+  const name = event.target['register-name'].value;
+  const email = event.target['register-email'].value;
+  const password = event.target['register-password'].value;
 
-  const user = {
-    name: name,
-    email: email,
-    password: password,
-  };
+  // Kontrollera att lösenordet är minst 4 tecken långt
+  if (password.length < 4) {
+    alert('Lösenordet måste vara minst 4 tecken långt.');
+    return; // Avbryt registreringen om lösenordet är för kort
+  }
 
-  fetch('http://localhost:3001/users', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(user),
-  })
-    .then((response) => response.json())
-    .then((newUser) => {
-      alert('Registrering lyckades! Logga in med ditt nya konto.');
-      document.getElementById('register-form').style.display = 'none';
-      document.getElementById('login-form').style.display = 'block';
-    });
-}
+  if (name && email && password) {
+    const newUser = { name, email, password };
+    addUser(newUser); // Skicka användaren till servern
+    event.target.reset(); // Töm formuläret
+  } else {
+    alert('Fyll i alla fält korrekt.');
+  }
+});
 
 function toggleForms() {
   const loginForm = document.getElementById('login-form');

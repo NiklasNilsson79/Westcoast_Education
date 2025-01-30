@@ -45,7 +45,7 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Niklas Nilsson",
       "email": "niklas@example.com",
       "password": "1234"
@@ -55,12 +55,6 @@
       "name": "Niklas Nilsson",
       "email": "nelzonproduction@gmail.com",
       "password": "4321"
-    },
-    {
-      "id": "81d6",
-      "name": "Kalle Anka",
-      "email": "kalle@ankeborg.se",
-      "password": "1313"
     }
   ]
 }
