@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="./src/styles/styles.css" />
     <script type="module" src="./src/details.js" defer></script>
     <title>Course Details</title>
@@ -17,11 +20,18 @@
     </nav>
 
     <main>
+      <a href="courses.html">
+        <button id="back-to-courses-button">
+          <i class="fas fa-arrow-left"></i> Gå tillbaka till kurser
+        </button>
+      </a>
       <div id="course-details">
         <h2 id="course-title"></h2>
         <p id="course-description"></p>
         <p id="course-duration"></p>
         <div id="course-image"></div>
+
+        <button id="book-button">Boka denna kurs</button>
       </div>
     </main>
 
