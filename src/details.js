@@ -66,10 +66,11 @@ const checkIfLoggedIn = () => {
     // Omdirigera till inloggningssidan
     window.location.href = '/log-in.html'; // Uppdatera sökvägen om den är annorlunda
   } else {
-    // Om användaren är inloggad
-    alert('Du är inloggad och kan boka den här kursen!');
-    // Här kan du fortsätta med bokningen
-    startBookingProcess(loggedInUserId); // Skicka med användar-ID:t
+    // Om användaren är inloggad, bekräfta innan bokning
+    if (confirm('Är du säker på att du vill boka den här kursen?')) {
+      // Om användaren bekräftar, starta bokningsprocessen
+      startBookingProcess(loggedInUserId);
+    }
   }
 };
 
@@ -81,7 +82,7 @@ const startBookingProcess = async (userId) => {
 
   // Kontrollera att kursens ID finns
   if (!courseId) {
-    alert('Kursens ID kunde inte hittas. Försök igen.');
+    alert('Kursen kunde inte hittas. Försök igen.');
     return;
   }
 
@@ -112,6 +113,7 @@ const startBookingProcess = async (userId) => {
 
   if (updateResponse.ok) {
     alert('Du har nu bokat kursen!');
+    window.location.href = '/my-bookings.html';
   } else {
     alert('Något gick fel vid bokningen. Försök igen.');
   }

@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-body {
+.index {
   font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
@@ -38,11 +38,30 @@ nav ul li a {
   font-size: 18px;
 }
 
+.user-info-container {
+  display: flex;
+  align-items: center;
+  margin-left: 70%;
+  height: 50px;
+  border: none;
+  z-index: 3;
+}
+
 .user-info {
   font-weight: bold;
+  margin-right: 10px;
   color: #333;
-  margin-left: 1000px;
-  margin-top: -20px;
+  z-index: 3;
+}
+
+#login-btn {
+  background-color: #e65c00;
+  width: 70px;
+  height: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 3;
 }
 
 .hero-text {
@@ -140,53 +159,39 @@ footer {
 /*details*/
 #course-details {
   margin-left: 100px;
-  width: 80%; /* Sätt en maxbredd på 80% av sidan */
-  margin-top: 100px; /* Lägg till lite mellanrum över innehållet */
-  padding: 50px; /* Lägg till lite inre avstånd så att texten inte sitter klistrad vid kanten */
-  background-color: #458399; /* Ljus bakgrundsfärg för att få innehållet att sticka ut */
-  border-radius: 8px; /* Rundade hörn för ett mjukare utseende */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* En liten skugga för att skapa ett lyft effekt */
+  width: 80%;
+  margin-top: 100px;
+  padding: 50px;
+  background-color: #458399;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #course-title {
   margin-top: 70px;
-  font-size: 2em; /* Större rubrikstorlek för titeln */
-  margin-bottom: 10px; /* Lägg till lite mellanrum under titeln */
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 #course-description {
-  font-size: 1.2em; /* Första textstorleken för beskrivningen */
-  margin-bottom: 20px; /* Mellanrum efter beskrivningen */
+  font-size: 1.2em;
+  margin-bottom: 20px;
 }
 
 #course-duration {
-  font-size: 1.1em; /* Större text för varaktighet */
-  color: #555; /* Dämpad färg för varaktigheten */
+  font-size: 1.1em;
+  color: #555;
 }
 
 #course-image img {
-  max-width: 50%; /* Gör att bilden kan anpassas till bredden */
-  height: auto; /* Låter höjden justeras automatiskt */
-  border-radius: 8px; /* Lägg till rundade hörn på bilden */
-  margin-top: 20px; /* Lägg till lite mellanrum ovanför bilden */
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  margin-top: 20px;
 }
 
 .details {
-  background: linear-gradient(
-    to bottom,
-    #0099ff,
-    #ffffff
-  ); /* Ljusblått till vitt gradient */
-}
-
-#logout-btn {
-  margin-top: 5px;
-  margin-left: 70%;
-  background-color: #e65c00;
-  border: none;
-  padding: 3px;
-  border-radius: 5px;
-  cursor: pointer;
+  background: linear-gradient(to bottom, #0099ff, #ffffff);
 }
 
 #book-button {
@@ -223,6 +228,7 @@ footer {
 }
 
 .my-bookings {
+  text-align: center;
   margin-top: 100px;
   margin-left: 20px;
 }
@@ -232,9 +238,10 @@ footer {
 }
 
 .course-card {
+  text-align: center;
   color: #b8bb13;
   margin-top: 30px;
-  margin-bottom: 20px; /* Justera värdet för önskat mellanrum */
+  margin-bottom: 20px;
 }
 
 .cancel-booking {
@@ -243,4 +250,8 @@ footer {
   margin: 5px;
   cursor: pointer;
   padding: 2px;
+}
+
+#back-to-course-button {
+  cursor: pointer;
 }

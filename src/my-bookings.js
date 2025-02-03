@@ -6,76 +6,95 @@ if (!loggedInUserId) {
   window.location.href = '/log-in.html'; // Omdirigera till inloggningssidan
 }
 
-// Funktion för att hämta och visa bokade kurser
-const fetchAndDisplayBookedCourses = async () => {
+// Gemensam funktion för att hämta användardata från JSON-servern
+const fetchUserData = async () => {
   try {
-    // Hämta användaren från JSON-servern
-    const userResponse = await fetch(
+    const response = await fetch(
       `http://localhost:3001/users/${loggedInUserId}`
     );
-    const user = await userResponse.json();
+    const user = await response.json();
 
-    if (!user || !user.bookings) {
-      alert('Inga bokade kurser hittades.');
-      return;
+    if (!user) {
+      throw new Error('Användaren hittades inte.');
     }
 
-    // Hämta alla kurser från JSON-servern
-    const coursesResponse = await fetch('http://localhost:3001/courses');
-    const allCourses = await coursesResponse.json();
-
-    // Filtrera ut de bokade kurserna
-    const bookedCourses = allCourses.filter((course) =>
-      user.bookings.includes(course.id)
-    );
-
-    // Visa de bokade kurserna på sidan
-    const bookedCoursesContainer = document.getElementById('booked-courses');
-    bookedCoursesContainer.innerHTML = bookedCourses
-      .map(
-        (course) => `
-            <div class="course-card">
-                <h2>${course.title}</h2>
-                <p><strong>Studieperiod:</strong> ${course.duration} veckor</p>
-                <button class="cancel-booking" data-course-id="${course.id}">Avboka</button>
-            </div>
-        `
-      )
-      .join('');
+    return user;
   } catch (error) {
-    console.error('Ett fel inträffade:', error);
-    alert('Ett fel inträffade vid hämtning av bokade kurser.');
+    console.error('Ett fel inträffade vid hämtning av användardata:', error);
+    alert('Ett fel inträffade vid hämtning av användardata.');
+    return null;
   }
 };
 
-// Hämta och visa bokade kurser när sidan laddas
-document.addEventListener('DOMContentLoaded', fetchAndDisplayBookedCourses);
+// Gemensam funktion för att hämta alla kurser från JSON-servern
+const fetchAllCourses = async () => {
+  try {
+    const response = await fetch('http://localhost:3001/courses');
+    const courses = await response.json();
 
-// Funktion för att avboka en kurs
-const cancelBooking = async (courseId) => {
-  const loggedInUserId = localStorage.getItem('loggedInUserId');
+    if (!courses) {
+      throw new Error('Inga kurser hittades.');
+    }
 
-  if (!loggedInUserId) {
-    alert('Du är inte inloggad. Logga in för att avboka kurser.');
+    return courses;
+  } catch (error) {
+    console.error('Ett fel inträffade vid hämtning av kurser:', error);
+    alert('Ett fel inträffade vid hämtning av kurser.');
+    return null;
+  }
+};
+
+// Funktion för att hämta och visa bokade kurser
+const fetchAndDisplayBookedCourses = async () => {
+  const user = await fetchUserData();
+  if (!user || !user.bookings) {
+    alert('Inga bokade kurser hittades.');
     return;
   }
 
+  const allCourses = await fetchAllCourses();
+  if (!allCourses) {
+    return;
+  }
+
+  // Filtrera ut de bokade kurserna
+  const bookedCourses = allCourses.filter((course) =>
+    user.bookings.includes(course.id)
+  );
+
+  // Visa de bokade kurserna på sidan
+  const bookedCoursesContainer = document.getElementById('booked-courses');
+  bookedCoursesContainer.innerHTML = bookedCourses
+    .map(
+      (course) => `
+        <div class="course-card">
+            <h2>${course.title}</h2>
+            <p><strong>Studieperiod:</strong> ${course.duration} veckor</p>
+            <button class="cancel-booking" data-course-id="${course.id}">Avboka</button>
+        </div>
+    `
+    )
+    .join('');
+};
+
+// Funktion för att avboka en kurs
+const cancelBooking = async (courseId) => {
+  const user = await fetchUserData();
+  if (!user || !user.bookings) {
+    alert('Inga bokade kurser hittades.');
+    return;
+  }
+
+  // Bekräftelse innan avbokning
+  if (!confirm('Är du säker på att du vill avboka kursen?')) {
+    return;
+  }
+
+  // Ta bort kursens ID från användarens bokningar
+  user.bookings = user.bookings.filter((id) => id !== courseId);
+
+  // Uppdatera användaren på JSON-servern
   try {
-    // Hämta användaren från JSON-servern
-    const userResponse = await fetch(
-      `http://localhost:3001/users/${loggedInUserId}`
-    );
-    const user = await userResponse.json();
-
-    if (!user || !user.bookings) {
-      alert('Inga bokade kurser hittades.');
-      return;
-    }
-
-    // Ta bort kursens ID från användarens bokningar
-    user.bookings = user.bookings.filter((id) => id !== courseId);
-
-    // Uppdatera användaren på JSON-servern
     const updateResponse = await fetch(
       `http://localhost:3001/users/${loggedInUserId}`,
       {
@@ -89,10 +108,9 @@ const cancelBooking = async (courseId) => {
 
     if (updateResponse.ok) {
       alert('Kursen har avbokats.');
-      // Uppdatera sidan för att visa de uppdaterade bokningarna
-      window.location.reload();
+      window.location.reload(); // Uppdatera sidan
     } else {
-      alert('Något gick fel vid avbokningen. Försök igen.');
+      throw new Error('Något gick fel vid uppdatering av användaren.');
     }
   } catch (error) {
     console.error('Ett fel inträffade:', error);
@@ -107,3 +125,6 @@ document.addEventListener('click', (event) => {
     cancelBooking(courseId);
   }
 });
+
+// Hämta och visa bokade kurser när sidan laddas
+document.addEventListener('DOMContentLoaded', fetchAndDisplayBookedCourses);

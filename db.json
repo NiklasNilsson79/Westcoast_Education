@@ -56,7 +56,20 @@
       "email": "nelzonproduction@gmail.com",
       "password": "4321",
       "bookings": [
-        "1"
+        "3",
+        "4"
+      ]
+    },
+    {
+      "id": "9b7e",
+      "name": "Kalle Anka",
+      "email": "kalle@ankeborg.se",
+      "password": "1313",
+      "bookings": [
+        "5",
+        "4",
+        "6",
+        "6"
       ]
     }
   ]
