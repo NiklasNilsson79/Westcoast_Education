@@ -4,17 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mina bokningar</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="src/styles/styles.css" />
+    <script src="src/my-bookings.js" defer></script>
   </head>
-  <body>
+  <body class="my-bookings-body">
+    <nav>
+      <ul>
+        <li><a href="index.html">Hem</a></li>
+        <li><a href="courses.html">Kurser</a></li>
+        <li><a href="my-bookings.html">Mina bokningar</a></li>
+      </ul>
+    </nav>
     <header>
-      <h1>Mina bokningar</h1>
+      <h1 class="my-bookings">Mina bokningar</h1>
     </header>
     <main>
       <div id="booked-courses">
         <!-- Här visas de bokade kurserna -->
       </div>
     </main>
-    <script src="my-bookings.js"></script>
   </body>
 </html>
