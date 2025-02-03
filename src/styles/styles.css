@@ -55,13 +55,17 @@ nav ul li a {
 }
 
 #login-btn {
-  background-color: #e65c00;
+  background-color: #ff6600;
   width: 70px;
   height: 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   z-index: 3;
+}
+
+#login-btn:hover {
+  background-color: #e65c00;
 }
 
 .hero-text {
@@ -234,7 +238,12 @@ footer {
 }
 
 .my-bookings-body {
-  background: linear-gradient(to bottom, #0099ff, #ffffff);
+  height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    #0099ff,
+    #ffffff
+  ); /* Ljusblått till vitt gradient */
 }
 
 .course-card {
@@ -245,13 +254,27 @@ footer {
 }
 
 .cancel-booking {
-  background-color: #e65c00;
+  background-color: #ff6600;
   border-radius: 5px;
-  margin: 5px;
+  margin: 15px;
   cursor: pointer;
-  padding: 2px;
+  padding: 3px;
+  border: none;
+}
+
+.cancel-booking:hover {
+  background-color: #e65c00;
 }
 
 #back-to-course-button {
   cursor: pointer;
+}
+
+#user-info-2 {
+  margin-top: 50px;
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 10px;
 }

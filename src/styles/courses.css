@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body #courses li {
-  background-color: #135c97 !important;
-}
-
 body {
   font-family: Arial, sans-serif;
   height: 100vh;

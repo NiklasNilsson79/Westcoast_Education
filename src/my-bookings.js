@@ -52,6 +52,13 @@ const fetchAndDisplayBookedCourses = async () => {
     return;
   }
 
+  // Visa användarens namn och e-postadress
+  const userInfoElement = document.getElementById('user-info-2');
+  userInfoElement.innerHTML = `
+    <p>Elev: <strong>${user.name}</strong></p>
+    <p>E-post: <strong>${user.email}</strong></p>
+  `;
+
   const allCourses = await fetchAllCourses();
   if (!allCourses) {
     return;
