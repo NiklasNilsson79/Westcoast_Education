@@ -1,3 +1,45 @@
+// Funktion för att visa rätt formulär baserat på URL-parameter
+function checkUrlParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const formType = urlParams.get('form');
+
+  if (formType === 'register') {
+    toggleForms(); // Visa registreringsformuläret
+  }
+}
+
+// Kör funktionen när sidan laddas
+document.addEventListener('DOMContentLoaded', function () {
+  checkUrlParams(); // Kontrollera URL-parametrar
+  document.getElementById('login-form').addEventListener('submit', loginUser);
+  document
+    .getElementById('register-form')
+    .addEventListener('submit', (event) => {
+      event.preventDefault();
+      registerUser(event);
+    });
+});
+
+// Funktion för att registrera en användare
+function registerUser(event) {
+  const name = event.target['register-name'].value;
+  const email = event.target['register-email'].value;
+  const password = event.target['register-password'].value;
+
+  if (password.length < 4) {
+    alert('Lösenordet måste vara minst 4 tecken långt.');
+    return;
+  }
+
+  if (name && email && password) {
+    const newUser = { name, email, password };
+    addUser(newUser); // Skicka användaren till servern
+    event.target.reset(); // Töm formuläret
+  } else {
+    alert('Fyll i alla fält korrekt.');
+  }
+}
+
 // Funktion för att lägga till en ny användare
 const addUser = async (user) => {
   try {
@@ -14,41 +56,15 @@ const addUser = async (user) => {
     const addedUser = await response.json();
     console.log('Ny användare tillagd:', addedUser);
 
-    // Visa ett meddelande om att registreringen var lyckad
     alert('Registrering lyckades! Logga in med ditt nya konto.');
-
-    // Byt till login-formuläret
-    toggleForms();
+    toggleForms(); // Byt till inloggningsformuläret
   } catch (error) {
     console.error('Error adding user:', error);
     alert('Ett fel inträffade när användaren skulle läggas till.');
   }
 };
 
-// Lyssna på formuläret för att lägga till en användare
-document.getElementById('register-form').addEventListener('submit', (event) => {
-  event.preventDefault();
-
-  // Hämta värden från formuläret
-  const name = event.target['register-name'].value;
-  const email = event.target['register-email'].value;
-  const password = event.target['register-password'].value;
-
-  // Kontrollera att lösenordet är minst 4 tecken långt
-  if (password.length < 4) {
-    alert('Lösenordet måste vara minst 4 tecken långt.');
-    return; // Avbryt registreringen om lösenordet är för kort
-  }
-
-  if (name && email && password) {
-    const newUser = { name, email, password };
-    addUser(newUser); // Skicka användaren till servern
-    event.target.reset(); // Töm formuläret
-  } else {
-    alert('Fyll i alla fält korrekt.');
-  }
-});
-
+// Funktion för att byta mellan inloggnings- och registreringsformulär
 function toggleForms() {
   const loginForm = document.getElementById('login-form');
   const registerForm = document.getElementById('register-form');
@@ -62,18 +78,13 @@ function toggleForms() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('login-form').addEventListener('submit', loginUser);
-});
-
+// Funktion för att logga in en användare
 function loginUser(event) {
-  event.preventDefault(); // Förhindra att formuläret skickas normalt
+  event.preventDefault();
 
-  // Hämta input-fälten med rätt ID
   const emailInput = document.getElementById('login-email');
   const passwordInput = document.getElementById('login-password');
 
-  // Säkerhetskoll så att elementen finns
   if (!emailInput || !passwordInput) {
     console.error('Kunde inte hitta inmatningsfälten!');
     return;

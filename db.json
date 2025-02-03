@@ -56,8 +56,8 @@
       "email": "nelzonproduction@gmail.com",
       "password": "4321",
       "bookings": [
-        "4",
-        "3"
+        "1",
+        "2"
       ]
     },
     {
@@ -70,6 +70,15 @@
         "4",
         "6",
         "6"
+      ]
+    },
+    {
+      "id": "814c",
+      "name": "Musse Pigg",
+      "email": "musse@pigg",
+      "password": "6666",
+      "bookings": [
+        "2"
       ]
     }
   ]

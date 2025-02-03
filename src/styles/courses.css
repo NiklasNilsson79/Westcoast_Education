@@ -55,7 +55,7 @@ nav ul li a {
 
 /* Lista för kurser */
 #courses {
-  margin: 20px auto;
+  margin: 5px auto;
   width: 80%;
   max-width: 1000px;
   list-style: none;
@@ -153,10 +153,11 @@ form textarea {
   border-radius: 5px;
 }
 
-form button {
+.add-class {
+  white-space: nowrap;
   background-color: #ff6600;
   color: white;
-  padding: 1px 100px;
+  padding: 7px 20px;
   font-size: 16px;
   border: none;
   border-radius: 5px;
@@ -164,8 +165,8 @@ form button {
   transition: background-color 0.3s;
 }
 
-form button:hover {
-  background-color: #0056b3;
+.add-class:hover {
+  background-color: #068104;
 }
 
 /* Knappar */
