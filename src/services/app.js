@@ -1,5 +1,7 @@
 import {
   BASE_URL,
+  fetchUserByCredentials,
+  addUser,
   fetchCourses,
   addCourse,
   deleteCourse,
@@ -9,7 +11,13 @@ import {
   fetchCourseDetails,
   updateUser,
 } from './api.js';
-import { createCourseDisplay, updateUI, displayCourseDetails } from './dom.js';
+import {
+  createCourseDisplay,
+  updateUI,
+  displayCourseDetails,
+  toggleForms,
+  displayError,
+} from './dom.js';
 
 export const initializeCourses = async () => {
   const coursesElement = document.getElementById('courses');
@@ -185,5 +193,52 @@ export const startBookingProcess = async (userId, courseId) => {
     window.location.href = '/my-bookings.html';
   } else {
     alert('Något gick fel vid bokningen. Försök igen.');
+  }
+};
+
+// log-in
+
+// Funktion för att logga in en användare
+export const loginUser = async (email, password) => {
+  try {
+    const user = await fetchUserByCredentials(email, password);
+    if (user) {
+      localStorage.setItem('loggedInUserId', user.id); // Spara användar-ID i localStorage
+      window.location.href = 'index.html'; // Omdirigera till startsidan
+    } else {
+      displayError('Felaktig e-post eller lösenord.');
+    }
+  } catch (error) {
+    console.error('Fel vid inloggning:', error);
+    displayError('Ett fel inträffade vid inloggning.');
+  }
+};
+
+// Funktion för att registrera en användare
+export const registerUser = async (name, email, password) => {
+  if (password.length < 4) {
+    displayError('Lösenordet måste vara minst 4 tecken långt.');
+    return;
+  }
+
+  if (name && email && password) {
+    const newUser = { name, email, password };
+    const addedUser = await addUser(newUser);
+    if (addedUser) {
+      displayError('Registrering lyckades! Logga in med ditt nya konto.');
+      toggleForms(); // Byt till inloggningsformuläret
+    }
+  } else {
+    displayError('Fyll i alla fält korrekt.');
+  }
+};
+
+// Kontrollera URL-parametrar för att visa rätt formulär
+export const checkUrlParams = () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const formType = urlParams.get('form');
+
+  if (formType === 'register') {
+    toggleForms(); // Visa registreringsformuläret
   }
 };

@@ -111,3 +111,36 @@ export const updateUser = async (userId, updatedUser) => {
     return null;
   }
 };
+
+// log-in
+
+// Hämta användare baserat på e-post och lösenord
+export const fetchUserByCredentials = async (email, password) => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/users?email=${email}&password=${password}`
+    );
+    if (!response.ok) throw new Error('Felaktig e-post eller lösenord.');
+    const users = await response.json();
+    return users[0]; // Returnera den första matchande användaren
+  } catch (error) {
+    console.error('Fel vid inloggning:', error);
+    return null;
+  }
+};
+
+// Lägg till en ny användare
+export const addUser = async (user) => {
+  try {
+    const response = await fetch(`${BASE_URL}/users`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(user),
+    });
+    if (!response.ok) throw new Error('Kunde inte lägga till användare.');
+    return await response.json();
+  } catch (error) {
+    console.error('Fel vid tillägg av användare:', error);
+    return null;
+  }
+};
