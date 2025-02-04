@@ -12,6 +12,33 @@
   flex-direction: column;
 }
 
+.body-courses {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    #0099ff,
+    #ffffff
+  ); /* Ljusblått till vitt gradient */
+}
+
+/* Allmänna stilar för login-sidan */
+.body-login {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    #0099ff,
+    #ffffff
+  ); /* Ljusblått till vitt gradient */
+  margin: 0;
+  padding: 0;
+}
+
 nav {
   background-color: rgba(0, 0, 0, 0.7);
   position: absolute;
@@ -93,7 +120,7 @@ nav ul li a {
   padding: 20px;
 }
 
-.hero h1 {
+.hero .index-h1 {
   font-size: 50px;
   margin-bottom: 20px;
 }
@@ -134,6 +161,12 @@ nav ul li a {
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s;
+}
+
+.courses-h1 {
+  font-size: 36px;
+  margin: 90px;
+  text-align: center;
 }
 
 #details img {
@@ -263,8 +296,241 @@ nav ul li a {
   text-align: center;
 }
 
-h2 {
-  margin-bottom: 10px;
+.courses-h2 {
+  font-size: 24px;
+  margin: 20px 10px;
+  text-align: center;
+}
+
+/* Lista för kurser */
+#courses {
+  margin: 5px auto;
+  width: 80%;
+  max-width: 1000px;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  padding-bottom: 50px;
+}
+
+#courses li {
+  position: relative; /* Gör så att vi kan placera bilden i förhållande till listobjektet */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 230px; /* Sätt en fast höjd för varje kursruta */
+  overflow: hidden; /* Förhindrar att innehållet flyter utanför */
+  cursor: pointer;
+}
+
+#courses img {
+  width: 100%; /* Gör så att bilden täcker hela bredden av kursen */
+  height: 100%; /* Bilden täcker hela höjden på kursrutan */
+  position: absolute; /* Placera bilden ovanpå innehållet */
+  top: 0; /* Gör så att den startar längst upp */
+  left: 0; /* Justera så att den är till vänster */
+  visibility: hidden; /* Döljer bilden från början */
+  opacity: 0; /* Gör den osynlig till att börja med */
+  transition: opacity 0.3s, visibility 0s linear 0.3s; /* Gör övergången mjuk */
+  z-index: 0; /* Gör så att bilden ligger bakom texten */
+}
+
+/* Skugg-overlay som ger bättre läsbarhet */
+#courses li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Mörk overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+#courses li:hover img {
+  visibility: visible;
+  opacity: 1;
+}
+
+#courses li:hover::after {
+  opacity: 1;
+}
+
+/* Säkerställer att texten ligger över bilden */
+#courses h3,
+#courses p {
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  color: white; /* Gör texten vit för kontrast */
+}
+
+/* Formulär */
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-class {
+  white-space: nowrap;
+  background-color: #ff6600;
+  color: white;
+  padding: 7px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-class:hover {
+  background-color: #068104;
+}
+
+/* Knappar */
+#delete {
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#update {
+  margin: 10px;
+  padding: 10px 15px;
+  background-color: #1ba80e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#delete:hover {
+  background-color: #a71d2a;
+}
+
+#update:hover {
+  background-color: #1e7e34;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+#new-course {
+  display: flex;
+  justify-content: flex-start; /* Alla element till vänster */
+  gap: 10px;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 100%; /* Förhindrar att formuläret blir för brett */
+}
+
+/* Container för login-formulär */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: #f4f4f4; /* Ljusgrå bakgrund för formuläret */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  font-size: 14px;
+  color: #333;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #ff6600; /* Matchar din nuvarande knappfärg */
+}
+
+/* Knappar */
+.log-in-btn {
+  background-color: #ff6600; /* Färgen matchar din nuvarande knapp */
+  color: white;
+  border: none;
+  padding: 12px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%; /* Gör knappen fullbredd */
+}
+
+.log-in-btn:hover {
+  background-color: #e55b00; /* Mörkare orange vid hover */
+}
+
+.log-in-p {
+  margin-top: 15px;
 }
 
 footer {
@@ -275,6 +541,9 @@ footer {
   color: white;
   text-align: center;
   padding: 10px;
-  margin-top: auto;
   z-index: 2;
+}
+
+.emty {
+  padding-bottom: 80px;
 }

@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logga in / Registrera dig</title>
-    <link rel="stylesheet" href="./src/styles/log-in.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
   </head>
 
-  <body class="index">
+  <body class="body-login">
     <!-- Navigeringsmeny -->
     <nav>
       <ul>
@@ -19,7 +19,7 @@
 
     <div class="container">
       <div class="form-container">
-        <h1>Välkommen!</h1>
+        <h1 class="login-h1">Välkommen!</h1>
 
         <!-- Inloggningsformulär -->
         <div class="form" id="login-form">
@@ -37,8 +37,8 @@
                 name="password"
                 required />
             </div>
-            <button type="submit">Logga in</button>
-            <p>
+            <button class="log-in-btn" type="submit">Logga in</button>
+            <p class="log-in-p">
               Har du inget konto?
               <a href="javascript:void(0);" onclick="toggleForms()"
                 >Registrera dig här</a
@@ -75,8 +75,8 @@
                 name="password-confirm"
                 required />
             </div>
-            <button type="submit">Registrera</button>
-            <p>
+            <button class="log-in-btn" type="submit">Registrera</button>
+            <p class="log-in-p">
               Har du redan ett konto?
               <a href="javascript:void(0);" onclick="toggleForms()"
                 >Logga in här</a

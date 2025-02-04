@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./src/styles/courses.css" />
+    <link rel="stylesheet" href="./src/styles/styles.css" />
     <script type="module" src="./src/courses.js" defer></script>
     <title>Kurser</title>
   </head>
-  <body>
+  <body class="body-courses">
     <!-- Navigeringsmeny -->
     <nav>
       <ul>
@@ -17,10 +17,10 @@
       </ul>
     </nav>
 
-    <h1>Kurser</h1>
+    <h1 class="courses-h1">Kurser</h1>
     <ul id="courses"></ul>
 
-    <h2>Administrationspanel</h2>
+    <h2 class="courses-h2">Administrationspanel</h2>
     <form id="new-course">
       <input type="text" name="title" placeholder="Kurstitel" required />
       <input
@@ -45,5 +45,6 @@
     <footer>
       <p>© 2025 Westcoast Education AB</p>
     </footer>
+    <div class="emty"></div>
   </body>
 </html>
