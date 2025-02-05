@@ -3,44 +3,50 @@
     {
       "id": "1",
       "title": "Introduktion till JavaScript",
-      "description": "Lär dig grunderna i JavaScript, ett av de mest populära programmeringsspråken.",
+      "description": "JavaScript är ett dynamiskt och mångsidigt programmeringsspråk som används för att skapa interaktiva och responsiva webbsidor. Det kan användas både på klient- och serversidan, vilket gör det till ett av de mest populära och kraftfulla språken inom webbutveckling. Genom att förstå grunderna i JavaScript kan du börja bygga allt från enkla script till komplexa applikationer. Det är ett språk som används på nästan alla moderna webbapplikationer och har en stor gemenskap som bidrar till dess tillväxt och utveckling. Lär dig JavaScript och öppna dörren till webbutvecklingens värld.",
       "duration": "8",
-      "imageUrl": "../images/javascript.jpg"
+      "imageUrl": "../images/javascript.jpg",
+      "teacher": "Michael Gustavsson"
     },
     {
       "id": "2",
       "title": "Webbutveckling med HTML och CSS",
-      "description": "Bygg snygga och responsiva webbplatser med HTML och CSS.",
+      "description": "Att bygga snygga och responsiva webbplatser med HTML och CSS är en grundläggande färdighet för alla webbutvecklare. HTML, som står för HyperText Markup Language, används för att strukturera innehållet på en webbsida, medan CSS (Cascading Style Sheets) används för att styla och ge design åt webbplatsens utseende. Genom att kombinera dessa två teknologier kan du skapa professionella och användarvänliga webbplatser som anpassar sig väl till olika enheter, från datorer till mobiltelefoner. Lär dig hur du skapar responsiva layouter, använder olika färger, typsnitt och bilder för att förbättra användarupplevelsen och få din webbplats att sticka ut på nätet.",
       "duration": "2",
-      "imageUrl": "../images/html.png"
+      "imageUrl": "../images/html.png",
+      "teacher": "Anna Larsson"
     },
     {
       "id": "3",
       "title": "Grundläggande Python-programmering",
-      "description": "En introduktionskurs till Python, perfekt för nybörjare.",
+      "description": "En introduktionskurs till Python är en utmärkt möjlighet för nybörjare att börja sin resa inom programmering. Python är ett populärt och lättläst programmeringsspråk som används inom en mängd olika områden, som webbprogrammering, datavetenskap, artificiell intelligens och automation. I denna kurs får du lära dig grunderna i Python, inklusive hur man skriver enkla program, arbetar med variabler och data, samt använder kontrollstrukturer som if-satser och loopar. Kursen är designad för att vara lättförståelig, så att även de som aldrig har programmerat tidigare kan hänga med och börja skapa sina egna projekt.",
       "duration": "5",
-      "imageUrl": "../images/php.jpg"
+      "imageUrl": "../images/php.jpg",
+      "teacher": "Erik Johansson"
     },
     {
       "id": "4",
       "title": "Databashantering med MySQL",
-      "description": "Lär dig att skapa, hantera och använda databaser med MySQL.",
+      "description": "Lär dig att skapa, hantera och använda databaser med MySQL. MySQL är en av världens mest populära databashanterare och används av utvecklare globalt för att bygga kraftfulla och skalbara applikationer. I den här kursen kommer du att få en introduktion till grunderna i databaser och SQL (Structured Query Language). Du lär dig hur man skapar databaser, lägger till, uppdaterar och tar bort data, samt hur man utför mer avancerade sökningar och analyser. Kursen täcker också viktiga koncept som normalisering, relationsdatabaser och indexering, och ger dig de färdigheter som krävs för att effektivt hantera och optimera databaser.",
       "duration": "3",
-      "imageUrl": "../images/sql.jpg"
+      "imageUrl": "../images/sql.jpg",
+      "teacher": "Sara Nilsson"
     },
     {
       "id": "5",
       "title": "Bygg applikationer med React",
-      "description": "Upptäck hur du skapar interaktiva användargränssnitt med React.",
+      "description": "Upptäck hur du skapar interaktiva användargränssnitt med React. React är ett kraftfullt JavaScript-bibliotek som används för att bygga användargränssnitt, särskilt för webbapplikationer som kräver dynamisk och snabb interaktivitet. I den här kursen kommer du att lära dig grunderna i React, inklusive komponenter, props och state, samt hur man hanterar användarinteraktioner och uppdaterar gränssnittet i realtid. Du kommer även att arbeta med React-router för att skapa flersidiga applikationer och lära dig hur du använder hooks för att hantera funktionell komponentlogik. Genom praktiska övningar kommer du att få de kunskaper och verktyg som behövs för att bygga egna, interaktiva webbsidor och applikationer.",
       "duration": "4",
-      "imageUrl": "../images/react.jpg"
+      "imageUrl": "../images/react.jpg",
+      "teacher": "Oskar Persson"
     },
     {
       "id": "6",
       "title": "Introduktion till Blockchain-teknik",
-      "description": "Utforska grunderna i blockchain och dess olika användningsområden.",
+      "description": "Utforska grunderna i blockchain och dess olika användningsområden. Blockchain är en banbrytande teknik som möjliggör säker och transparent datalagring genom decentralisering. I denna kurs kommer du att lära dig om de grundläggande principerna bakom blockchain, inklusive dess struktur, hur blocken länkas samman och den roll som kryptografi spelar för att säkerställa nätverkets integritet. Du kommer att undersöka hur blockchain används inom olika branscher som finans, hälso- och sjukvård, logistik och till och med röstning. Dessutom får du en inblick i smarta kontrakt och hur de kan automatisera affärsprocesser. Genom praktiska exempel och case studies kommer du att förstå hur denna teknik kan förändra framtidens digitala landskap.",
       "duration": "5",
-      "imageUrl": "../images/blockchain.jpeg"
+      "imageUrl": "../images/blockchain.jpeg",
+      "teacher": "Emma Andersson"
     }
   ],
   "users": [
@@ -56,10 +62,10 @@
       "email": "nelzonproduction@gmail.com",
       "password": "4321",
       "bookings": [
-        "2",
         "1",
         "1",
-        "2"
+        "1",
+        "5"
       ]
     },
     {
