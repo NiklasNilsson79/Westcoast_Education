@@ -94,11 +94,13 @@ export const displayCourseDetails = (course) => {
   const descriptionElement = getElement('course-description');
   const durationElement = getElement('course-duration');
   const imageContainer = getElement('course-image');
+  const courseTypeElement = getElement('course-type');
 
   if (titleElement && descriptionElement && durationElement && imageContainer) {
     titleElement.textContent = course.title;
     descriptionElement.textContent = course.description;
     durationElement.textContent = `Studieperiod ${course.duration} veckor`;
+    courseTypeElement.textContent = `${course.courseType}`;
 
     const courseImage = document.createElement('img');
     courseImage.src = course.imageUrl;

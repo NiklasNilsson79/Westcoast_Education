@@ -62,6 +62,8 @@ export const setupEventListeners = () => {
       const title = event.target.title.value;
       const description = event.target.description.value;
       const duration = parseInt(event.target.duration.value);
+      const teacher = event.target.teacher.value;
+      const courseType = event.target.courseType.value;
 
       if (title && description && duration) {
         const nextId = await getNextId();
@@ -76,6 +78,8 @@ export const setupEventListeners = () => {
           title,
           description,
           duration,
+          teacher,
+          courseType,
         };
 
         const addedCourse = await addCourse(newCourse);
@@ -103,12 +107,16 @@ export const setupEventListeners = () => {
     if (id) {
       const title = prompt('Ange nytt titelvärde:');
       const description = prompt('Ange ny beskrivning:');
+      const teacher = prompt('Ange ny lärare:');
+      const courseType = prompt('Ange ny studiestil');
       const duration = prompt('Ange ny varaktighet (veckor):');
 
       if (title && description && duration) {
         const updatedCourse = {
           title,
           description,
+          teacher,
+          courseType,
           duration: parseInt(duration),
           imageUrl: './images/no-img.jpg',
         };

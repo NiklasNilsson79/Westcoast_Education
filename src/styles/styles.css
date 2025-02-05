@@ -203,6 +203,11 @@ nav ul li a {
   color: #555;
 }
 
+#course-type {
+  font-size: 1.1em;
+  color: #555;
+}
+
 #course-image img {
   max-width: 30%;
   height: auto;
