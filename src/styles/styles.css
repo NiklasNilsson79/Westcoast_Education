@@ -407,6 +407,14 @@ form textarea {
   border-radius: 5px;
 }
 
+.course-duration {
+  width: 51%;
+}
+
+.study-style {
+  width: 50%;
+}
+
 .add-class {
   white-space: nowrap;
   background-color: #ff6600;
