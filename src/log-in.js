@@ -1,4 +1,3 @@
-// log-in.js
 import { checkUrlParams, loginUser, registerUser } from './services/app.js';
 
 document.addEventListener('DOMContentLoaded', () => {

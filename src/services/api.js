@@ -144,3 +144,46 @@ export const addUser = async (user) => {
     return null;
   }
 };
+
+// my bookings
+
+// Hämta en specifik användare
+export const fetchUserData = async (userId) => {
+  try {
+    const response = await fetch(`${BASE_URL}/users/${userId}`);
+    if (!response.ok) throw new Error('Användaren hittades inte.');
+    return await response.json();
+  } catch (error) {
+    console.error('Ett fel inträffade vid hämtning av användardata:', error);
+    return null;
+  }
+};
+
+// Hämta alla kurser
+export const fetchAllCourses = async () => {
+  try {
+    const response = await fetch(`${BASE_URL}/courses`);
+    if (!response.ok) throw new Error('Inga kurser hittades.');
+    return await response.json();
+  } catch (error) {
+    console.error('Ett fel inträffade vid hämtning av kurser:', error);
+    return null;
+  }
+};
+
+// Uppdatera en användare (t.ex. för att avboka en kurs)
+export const updateUserBooking = async (userId, updatedUser) => {
+  try {
+    const response = await fetch(`${BASE_URL}/users/${userId}`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedUser),
+    });
+    if (!response.ok)
+      throw new Error('Något gick fel vid uppdatering av användaren.');
+    return await response.json();
+  } catch (error) {
+    console.error('Ett fel inträffade:', error);
+    return null;
+  }
+};

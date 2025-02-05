@@ -55,14 +55,22 @@
       "name": "Niklas Nilsson",
       "email": "nelzonproduction@gmail.com",
       "password": "4321",
-      "bookings": ["2", "1", "1", "2"]
+      "bookings": [
+        "2",
+        "1",
+        "1",
+        "2"
+      ]
     },
     {
       "id": "dbb7",
       "name": "Kalle Anka",
       "email": "kalle@ankeborg.se",
       "password": "1313",
-      "bookings": ["3", "2"]
+      "bookings": [
+        "3",
+        "2"
+      ]
     }
   ]
 }

@@ -1,5 +1,3 @@
-// dom.js
-
 // Funktion för att skapa och visa kurser i DOM:en
 export const createCourseDisplay = (courses) => {
   // Kontrollera att courses är en array
@@ -102,7 +100,7 @@ export const displayCourseDetails = (course) => {
   document.getElementById('course-image').appendChild(courseImage);
 };
 
-// dom.js
+// log-in
 export const toggleForms = () => {
   const loginForm = document.getElementById('login-form');
   const registerForm = document.getElementById('register-form');
@@ -118,4 +116,32 @@ export const toggleForms = () => {
 
 export const displayError = (message) => {
   alert(message); // Eller visa ett felmeddelande i DOM:en
+};
+
+// My-bookings
+export const displayUserInfo = (user) => {
+  const userInfoElement = document.getElementById('user-info-2');
+  if (userInfoElement) {
+    userInfoElement.innerHTML = `
+      <p>Elev: <strong>${user.name}</strong></p>
+      <p>E-post: <strong>${user.email}</strong></p>
+    `;
+  }
+};
+
+export const displayBookedCourses = (bookedCourses) => {
+  const bookedCoursesContainer = document.getElementById('booked-courses');
+  if (bookedCoursesContainer) {
+    bookedCoursesContainer.innerHTML = bookedCourses
+      .map(
+        (course) => `
+          <div class="course-card">
+              <h2>${course.title}</h2>
+              <p><strong>Studieperiod:</strong> ${course.duration} veckor</p>
+              <button class="cancel-booking" data-course-id="${course.id}">Avboka</button>
+          </div>
+      `
+      )
+      .join('');
+  }
 };

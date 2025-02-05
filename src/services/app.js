@@ -1,5 +1,8 @@
 import {
   BASE_URL,
+  fetchUserData,
+  fetchAllCourses,
+  updateUserBooking,
   fetchUserByCredentials,
   addUser,
   fetchCourses,
@@ -17,6 +20,8 @@ import {
   displayCourseDetails,
   toggleForms,
   displayError,
+  displayUserInfo,
+  displayBookedCourses,
 } from './dom.js';
 
 export const initializeCourses = async () => {
@@ -240,5 +245,63 @@ export const checkUrlParams = () => {
 
   if (formType === 'register') {
     toggleForms(); // Visa registreringsformuläret
+  }
+};
+
+// My-bookings
+
+// Hämta den inloggade användarens ID från localStorage
+export const getLoggedInUserId = () => localStorage.getItem('loggedInUserId');
+
+// Hämta och visa bokade kurser
+export const fetchAndDisplayBookedCourses = async () => {
+  const loggedInUserId = getLoggedInUserId();
+  if (!loggedInUserId) return;
+
+  const user = await fetchUserData(loggedInUserId);
+  if (!user || !user.bookings) {
+    alert('Inga bokade kurser hittades.');
+    return;
+  }
+
+  displayUserInfo(user);
+
+  const allCourses = await fetchAllCourses();
+  if (!allCourses) return;
+
+  // Filtrera ut de bokade kurserna
+  const bookedCourses = allCourses.filter((course) =>
+    user.bookings.includes(course.id)
+  );
+
+  displayBookedCourses(bookedCourses);
+};
+
+// Avboka en kurs
+export const cancelBooking = async (courseId) => {
+  const loggedInUserId = getLoggedInUserId();
+  if (!loggedInUserId) return;
+
+  const user = await fetchUserData(loggedInUserId);
+  if (!user || !user.bookings) {
+    alert('Inga bokade kurser hittades.');
+    return;
+  }
+
+  // Bekräftelse innan avbokning
+  if (!confirm('Är du säker på att du vill avboka kursen?')) {
+    return;
+  }
+
+  // Ta bort kursens ID från användarens bokningar
+  user.bookings = user.bookings.filter((id) => id !== courseId);
+
+  // Uppdatera användaren på JSON-servern
+  const updatedUser = await updateUser(loggedInUserId, user);
+  if (updatedUser) {
+    alert('Kursen har avbokats.');
+    window.location.reload(); // Uppdatera sidan
+  } else {
+    alert('Något gick fel vid avbokningen.');
   }
 };
