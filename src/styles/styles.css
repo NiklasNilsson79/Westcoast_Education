@@ -544,6 +544,14 @@ footer {
   z-index: 2;
 }
 
+.course-card h2 {
+  margin-bottom: 20px;
+}
+
+.course-card p {
+  color: white;
+}
+
 .emty {
   padding-bottom: 80px;
 }
