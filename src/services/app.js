@@ -312,3 +312,24 @@ export const cancelBooking = async (courseId) => {
     alert('Något gick fel vid avbokningen.');
   }
 };
+
+//Administrationspanelen
+
+// Hämta administrationspanelen
+const adminPanel = document.getElementById('admin-panel');
+
+// Funktion för att kontrollera om en specifik användare är inloggad
+const checkAdminUser = () => {
+  const loggedInUserId = localStorage.getItem('loggedInUserId');
+
+  // Kontrollera om användaren är inloggad och har ett specifikt ID (t.ex. admin)
+  if (loggedInUserId === 'admin') {
+    // Ersätt 'admin' med det faktiska ID:t för din admin-användare
+    adminPanel.classList.add('visible'); // Visa administrationspanelen
+  } else {
+    adminPanel.classList.remove('visible'); // Dölj administrationspanelen
+  }
+};
+
+// Kör funktionen när sidan laddas
+document.addEventListener('DOMContentLoaded', checkAdminUser);

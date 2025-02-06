@@ -20,34 +20,36 @@
     <h1 class="courses-h1">Kurser</h1>
     <ul id="courses"></ul>
 
-    <h2 class="courses-h2">Administrationspanel</h2>
-    <form id="new-course">
-      <input type="text" name="title" placeholder="Kurstitel" required />
-      <input
-        type="text"
-        name="description"
-        placeholder="Beskrivning"
-        required />
-      <input type="text" name="teacher" placeholder="Lärare" required />
-      <input
-        class="study-style"
-        type="text"
-        name="courseType"
-        placeholder="klassrum/Distans"
-        required />
-      <input
-        class="course-duration"
-        type="number"
-        name="duration"
-        placeholder="Studieperiod (veckor)"
-        required />
+    <div id="admin-panel">
+      <h2 class="courses-h2">Administrationspanel</h2>
+      <form id="new-course">
+        <input type="text" name="title" placeholder="Kurstitel" required />
+        <input
+          type="text"
+          name="description"
+          placeholder="Beskrivning"
+          required />
+        <input type="text" name="teacher" placeholder="Lärare" required />
+        <input
+          class="study-style"
+          type="text"
+          name="courseType"
+          placeholder="klassrum/Distans"
+          required />
+        <input
+          class="course-duration"
+          type="number"
+          name="duration"
+          placeholder="Studieperiod (veckor)"
+          required />
 
-      <button class="add-class" type="submit">Lägg till</button>
-    </form>
+        <button class="add-class" type="submit">Lägg till</button>
+      </form>
 
-    <div class="button-container">
-      <button id="delete">Radera kurs</button>
-      <button id="update">Uppdatera kurs</button>
+      <div class="button-container">
+        <button id="delete">Radera kurs</button>
+        <button id="update">Uppdatera kurs</button>
+      </div>
     </div>
 
     <footer>

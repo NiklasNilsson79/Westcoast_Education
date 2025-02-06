@@ -603,3 +603,11 @@ footer {
 .emty {
   padding-bottom: 80px;
 }
+
+#admin-panel {
+  display: none; /* Dölj administrationspanelen som standard */
+}
+
+#admin-panel.visible {
+  display: block; /* Visa administrationspanelen när klassen "visible" läggs till */
+}

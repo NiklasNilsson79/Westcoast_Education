@@ -63,10 +63,11 @@
   ],
   "users": [
     {
-      "id": "1",
-      "name": "Niklas Nilsson",
-      "email": "niklas@example.com",
-      "password": "1234"
+      "id": "admin",
+      "name": "admin",
+      "email": "admin@me",
+      "password": "9999",
+      "bookings": []
     },
     {
       "id": "19a4",
@@ -76,7 +77,6 @@
       "phone": "0709 28 75 40",
       "password": "4321",
       "bookings": [
-        "1",
         "3",
         "6"
       ]
