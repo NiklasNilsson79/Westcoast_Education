@@ -7,7 +7,8 @@
       "duration": "8",
       "imageUrl": "../images/javascript.jpg",
       "teacher": "Michael Gustavsson",
-      "courseType": "Distans"
+      "courseType": "Distans",
+      "courseStart": "2025-03-25"
     },
     {
       "id": "2",
@@ -16,7 +17,8 @@
       "duration": "2",
       "imageUrl": "../images/html.png",
       "teacher": "Anna Larsson",
-      "courseType": "Klassrum"
+      "courseType": "Klassrum",
+      "courseStart": "2025-05-20"
     },
     {
       "id": "3",
@@ -25,7 +27,8 @@
       "duration": "5",
       "imageUrl": "../images/php.jpg",
       "teacher": "Erik Johansson",
-      "courseType": "Distans"
+      "courseType": "Distans",
+      "courseStart": "2025-06-15"
     },
     {
       "id": "4",
@@ -34,7 +37,8 @@
       "duration": "3",
       "imageUrl": "../images/sql.jpg",
       "teacher": "Sara Nilsson",
-      "courseType": "Distans"
+      "courseType": "Distans",
+      "courseStart": "2026-01-02"
     },
     {
       "id": "5",
@@ -43,7 +47,8 @@
       "duration": "4",
       "imageUrl": "../images/react.jpg",
       "teacher": "Oskar Persson",
-      "courseType": "Klassrum"
+      "courseType": "Klassrum",
+      "courseStart": "2025-10-19"
     },
     {
       "id": "6",
@@ -52,7 +57,8 @@
       "duration": "5",
       "imageUrl": "../images/blockchain.jpeg",
       "teacher": "Emma Andersson",
-      "courseType": "Distans"
+      "courseType": "Distans",
+      "courseStart": "2026-05-16"
     }
   ],
   "users": [
@@ -69,7 +75,8 @@
       "password": "4321",
       "bookings": [
         "5",
-        "6"
+        "6",
+        "2"
       ]
     },
     {

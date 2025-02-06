@@ -95,12 +95,14 @@ export const displayCourseDetails = (course) => {
   const durationElement = getElement('course-duration');
   const imageContainer = getElement('course-image');
   const courseTypeElement = getElement('course-type');
+  const courseStartElement = getElement('course-start');
 
   if (titleElement && descriptionElement && durationElement && imageContainer) {
     titleElement.textContent = course.title;
     descriptionElement.textContent = course.description;
     durationElement.textContent = `Studieperiod ${course.duration} veckor`;
     courseTypeElement.textContent = `${course.courseType}`;
+    courseStartElement.textContent = `Start ${course.courseStart}`;
 
     const courseImage = document.createElement('img');
     courseImage.src = course.imageUrl;
@@ -135,6 +137,7 @@ export const displayBookedCourses = (bookedCourses) => {
     courseCard.innerHTML = `
       <h2>${course.title}</h2>
       <p><strong>Lärare:</strong> ${course.teacher} </p>
+      <p><strong>Startdatum:</strong> ${course.courseStart} </p>
       <button class="cancel-booking" data-course-id="${course.id}">Avboka</button>
     `;
     return courseCard;
