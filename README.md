@@ -4,9 +4,12 @@ Inlämningsuppgift 1 till JavaScript-programmering...
 
 Välkommen till Westcoast_Education!
 
-Alla användare har tillgång till utbildningsportalen, där de kan se tillgängliga kurser och läsa mer om dem. För att boka en kurs krävs det att användaren har registrerat sig och loggat in på plattformen. När inloggningen är genomförd får användaren möjlighet att boka sig på de kurser som erbjuds.
+Alla användare har tillgång till utbildningsportalen, där de kan se tillgängliga kurser och läsa mer om dem. 
+För att boka en kurs krävs det att användaren har registrerat sig och loggat in på plattformen. 
+När inloggningen är genomförd får användaren möjlighet att boka sig på de kurser som erbjuds.
 
-För att lägga till nya kurser eller redigera befintliga, behöver man vara inloggad som administratör. Administratörens inloggningsuppgifter är som följer:
+För att lägga till nya kurser eller redigera befintliga, behöver man vara inloggad som administratör. 
+Administratörens inloggningsuppgifter är som följer:
 
 E-post: admin@me
 Lösenord: 9999
@@ -20,5 +23,7 @@ npm run start:api
 
 
 
-Med vänlig hälsning, Niklas Nilsson
+Med vänlig hälsning, 
+Niklas Nilsson
+
 GitHub-repository: https://github.com/din-användarnamn/ditt-repository
