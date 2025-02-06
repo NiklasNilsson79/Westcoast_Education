@@ -69,24 +69,16 @@
       "password": "1234"
     },
     {
-      "id": "ed1e",
+      "id": "19a4",
       "name": "Niklas Nilsson",
       "email": "nelzonproduction@gmail.com",
+      "address": "Rådstuguvägen 20",
+      "phone": "0709 28 75 40",
       "password": "4321",
       "bookings": [
-        "5",
-        "6",
-        "2"
-      ]
-    },
-    {
-      "id": "dbb7",
-      "name": "Kalle Anka",
-      "email": "kalle@ankeborg.se",
-      "password": "1313",
-      "bookings": [
+        "1",
         "3",
-        "2"
+        "6"
       ]
     }
   ]

@@ -2,7 +2,6 @@ import {
   BASE_URL,
   fetchUserData,
   fetchAllCourses,
-  updateUserBooking,
   fetchUserByCredentials,
   addUser,
   fetchCourses,
@@ -228,14 +227,14 @@ export const loginUser = async (email, password) => {
 };
 
 // Funktion för att registrera en användare
-export const registerUser = async (name, email, password) => {
+export const registerUser = async (name, email, address, phone, password) => {
   if (password.length < 4) {
     displayError('Lösenordet måste vara minst 4 tecken långt.');
     return;
   }
 
   if (name && email && password) {
-    const newUser = { name, email, password };
+    const newUser = { name, email, address, phone, password };
     const addedUser = await addUser(newUser);
     if (addedUser) {
       displayError('Registrering lyckades! Logga in med ditt nya konto.');

@@ -20,8 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
       event.preventDefault();
       const name = event.target['register-name'].value;
       const email = event.target['register-email'].value;
+      const address = event.target['register-address'].value;
+      const phone = event.target['register-phone'].value;
       const password = event.target['register-password'].value;
-      registerUser(name, email, password);
+      registerUser(name, email, address, phone, password);
     });
   }
 });

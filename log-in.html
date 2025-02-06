@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logga in / Registrera dig</title>
     <link rel="stylesheet" href="./src/styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
     <script type="module" src="./src/log-in.js" defer></script>
   </head>
 
@@ -41,7 +45,7 @@
             <button class="log-in-btn" type="submit">Logga in</button>
             <p class="log-in-p">
               Har du inget konto?
-              <a href="javascript:void(0);" onclick="toggleForms()"
+              <a href="javascript:void(0);" class="toggle-button"
                 >Registrera dig här</a
               >
             </p>
@@ -59,6 +63,18 @@
             <div class="input-group">
               <label for="register-email">E-post</label>
               <input type="email" id="register-email" name="email" required />
+            </div>
+            <div class="input-group">
+              <label for="register-address">Adress</label>
+              <input
+                type="text"
+                id="register-address"
+                name="address"
+                required />
+            </div>
+            <div class="input-group">
+              <label for="register-phone">Mobilnummer</label>
+              <input type="phone" id="register-phone" name="phone" required />
             </div>
             <div class="input-group">
               <label for="register-password">Lösenord</label>
@@ -79,7 +95,7 @@
             <button class="log-in-btn" type="submit">Registrera</button>
             <p class="log-in-p">
               Har du redan ett konto?
-              <a href="javascript:void(0);" onclick="toggleForms()"
+              <a href="javascript:void(0);" class="toggle-button"
                 >Logga in här</a
               >
             </p>

@@ -7,7 +7,7 @@ const getElement = (id) => {
 
 const showError = (message) => {
   console.error(message);
-  alert(message); // Eller visa felmeddelandet i DOM:en
+  alert(message);
 };
 
 const renderList = (containerId, items, createItem) => {
@@ -45,18 +45,6 @@ export const createCourseDisplay = (courses) => {
   });
 };
 
-export const renderCourses = (courses) => {
-  renderList('courses-list', courses, (course) => {
-    const courseElement = document.createElement('div');
-    courseElement.classList.add('course');
-    courseElement.innerHTML = `
-      <h3>${course.title}</h3>
-      <p>${course.description}</p>
-    `;
-    return courseElement;
-  });
-};
-
 // Användarrelaterade funktioner
 export const updateUI = (user) => {
   const userInfoElement = getElement('user-info');
@@ -82,8 +70,13 @@ export const displayUserInfo = (user) => {
   const userInfoElement = getElement('user-info-2');
   if (userInfoElement) {
     userInfoElement.innerHTML = `
-      <p>Elev: <strong>${user.name}</strong></p>
-      <p>E-post: <strong>${user.email}</strong></p>
+      <div class="user-card">
+        <h2><i class="fas fa-user"></i> Elevinformation</h2>
+        <p><i class="fas fa-user-circle"></i> <strong>${user.name}</strong></p>
+        <p><i class="fas fa-map-marker-alt"></i> ${user.address}</p>
+        <p><i class="fas fa-phone"></i> ${user.phone}</p>
+        <p><i class="fas fa-envelope"></i> ${user.email}</p>
+      </div>
     `;
   }
 };
@@ -124,6 +117,14 @@ export const toggleForms = () => {
       registerForm.style.display === 'none' ? 'block' : 'none';
   }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButtons = document.querySelectorAll('.toggle-button');
+
+  toggleButtons.forEach((button) => {
+    button.addEventListener('click', toggleForms);
+  });
+});
 
 export const displayError = (message) => {
   showError(message);

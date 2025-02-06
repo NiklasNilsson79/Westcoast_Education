@@ -388,9 +388,9 @@ nav ul li a {
 form {
   width: 100%;
   max-width: 500px;
-  margin: 20px auto;
+  margin: 10px auto;
   background-color: #f4f4f4;
-  padding: 20px;
+  padding: 5px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   margin-top: 10px;
@@ -488,7 +488,7 @@ form textarea {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
   padding: 20px;
 }
 
@@ -530,7 +530,6 @@ form textarea {
   border-color: #ff6600; /* Matchar din nuvarande knappfärg */
 }
 
-/* Knappar */
 .log-in-btn {
   background-color: #ff6600; /* Färgen matchar din nuvarande knapp */
   color: white;
@@ -568,6 +567,37 @@ footer {
 
 .course-card p {
   color: white;
+}
+
+.user-card {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.user-card h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 10px;
+}
+
+.user-card p {
+  font-size: 16px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-card i {
+  margin-right: 8px;
+  font-size: 18px;
 }
 
 .emty {
