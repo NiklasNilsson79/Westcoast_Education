@@ -335,21 +335,21 @@ nav ul li a {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 230px; /* Sätt en fast höjd för varje kursruta */
-  overflow: hidden; /* Förhindrar att innehållet flyter utanför */
+  height: 230px;
+  overflow: hidden;
   cursor: pointer;
 }
 
 #courses img {
-  width: 100%; /* Gör så att bilden täcker hela bredden av kursen */
-  height: 100%; /* Bilden täcker hela höjden på kursrutan */
-  position: absolute; /* Placera bilden ovanpå innehållet */
-  top: 0; /* Gör så att den startar längst upp */
-  left: 0; /* Justera så att den är till vänster */
-  visibility: hidden; /* Döljer bilden från början */
-  opacity: 0; /* Gör den osynlig till att börja med */
-  transition: opacity 0.3s, visibility 0s linear 0.3s; /* Gör övergången mjuk */
-  z-index: 0; /* Gör så att bilden ligger bakom texten */
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0s linear 0.3s;
+  z-index: 0;
 }
 
 /* Skugg-overlay som ger bättre läsbarhet */
@@ -381,7 +381,7 @@ nav ul li a {
   margin-bottom: 20px;
   position: relative;
   z-index: 2;
-  color: white; /* Gör texten vit för kontrast */
+  color: white;
 }
 
 /* Formulär */
@@ -476,11 +476,11 @@ form textarea {
 
 #new-course {
   display: flex;
-  justify-content: flex-start; /* Alla element till vänster */
+  justify-content: flex-start;
   gap: 10px;
   flex-wrap: nowrap;
   width: 100%;
-  max-width: 100%; /* Förhindrar att formuläret blir för brett */
+  max-width: 100%;
 }
 
 /* Container för login-formulär */
@@ -493,7 +493,7 @@ form textarea {
 }
 
 .form-container {
-  background-color: #f4f4f4; /* Ljusgrå bakgrund för formuläret */
+  background-color: #f4f4f4;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 40px;
@@ -527,11 +527,11 @@ form textarea {
 
 .input-group input:focus {
   outline: none;
-  border-color: #ff6600; /* Matchar din nuvarande knappfärg */
+  border-color: #ff6600;
 }
 
 .log-in-btn {
-  background-color: #ff6600; /* Färgen matchar din nuvarande knapp */
+  background-color: #ff6600;
   color: white;
   border: none;
   padding: 12px 0;
@@ -610,4 +610,63 @@ footer {
 
 #admin-panel.visible {
   display: block; /* Visa administrationspanelen när klassen "visible" läggs till */
+}
+
+.admin-body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  margin: 0;
+  padding: 0;
+}
+
+.admin-header {
+  text-align: center;
+  padding-top: 100px;
+  color: white;
+}
+
+.admin-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.admin-courses {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+}
+
+.admin-course-card {
+  background: #ffffff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.admin-course-card h3 {
+  color: #6a11cb;
+  margin-bottom: 5px;
+}
+
+.admin-student-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.admin-student-list li {
+  background: #e9e9e9;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.admin-overview {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }

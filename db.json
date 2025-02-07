@@ -78,7 +78,33 @@
       "password": "4321",
       "bookings": [
         "3",
+        "6",
+        "1"
+      ]
+    },
+    {
+      "id": "6b6e",
+      "name": "Musse Pigg",
+      "email": "musse@pigg",
+      "address": "Ankeborgsvägen 22",
+      "phone": "0709123 23 34",
+      "password": "5555",
+      "bookings": [
+        "1",
+        "2",
         "6"
+      ]
+    },
+    {
+      "id": "6b70",
+      "name": "Kalle Anka",
+      "email": "kalle@ankeborg.se",
+      "address": "Kvackvägen 13",
+      "phone": "0709 133 13 13",
+      "password": "1313",
+      "bookings": [
+        "5",
+        "3"
       ]
     }
   ]
