@@ -40,3 +40,5 @@ All hjälp och feedback är välkommen! 😊
 För att starta servern, kör följande kommando i terminalen:
 
 npm run start:api
+
+![Startsidan](images/first-page.png)
