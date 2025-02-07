@@ -144,3 +144,36 @@ export const displayBookedCourses = (bookedCourses) => {
     return courseCard;
   });
 };
+
+//Admin-sidan
+export const displayCoursesWithBookings = (courses, users) => {
+  const coursesList = document.getElementById('courses-list');
+  coursesList.innerHTML = ''; // Rensa listan först
+
+  courses.forEach((course) => {
+    const courseElement = document.createElement('div');
+    courseElement.classList.add('admin-course-card');
+
+    // Hitta vilka elever som är bokade på denna kurs
+    const enrolledUsers = users.filter(
+      (user) => user.bookings && user.bookings.includes(course.id.toString())
+    );
+
+    // Skapa HTML för kursen
+    courseElement.innerHTML = `
+      <h3>${course.title}</h3>
+      <p><strong>Bokade elever:</strong></p>
+      <ul class="admin-student-list">
+        ${
+          enrolledUsers.length > 0
+            ? enrolledUsers
+                .map((user) => `<li>${user.name} (${user.email})</li>`)
+                .join('')
+            : '<li>Inga bokade elever</li>'
+        }
+      </ul>
+    `;
+
+    coursesList.appendChild(courseElement);
+  });
+};

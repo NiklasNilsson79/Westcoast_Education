@@ -1,4 +1,3 @@
-/* Grundläggande stil för hela sidan */
 * {
   margin: 0;
   padding: 0;
@@ -17,24 +16,15 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    to bottom,
-    #0099ff,
-    #ffffff
-  ); /* Ljusblått till vitt gradient */
+  background: linear-gradient(to bottom, #0099ff, #ffffff);
 }
 
-/* Allmänna stilar för login-sidan */
 .body-login {
   font-family: Arial, sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(
-    to bottom,
-    #0099ff,
-    #ffffff
-  ); /* Ljusblått till vitt gradient */
+  background: linear-gradient(to bottom, #0099ff, #ffffff);
   margin: 0;
   padding: 0;
 }
@@ -326,7 +316,7 @@ nav ul li a {
 }
 
 #courses li {
-  position: relative; /* Gör så att vi kan placera bilden i förhållande till listobjektet */
+  position: relative;
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -352,7 +342,6 @@ nav ul li a {
   z-index: 0;
 }
 
-/* Skugg-overlay som ger bättre läsbarhet */
 #courses li::after {
   content: '';
   position: absolute;
@@ -375,7 +364,6 @@ nav ul li a {
   opacity: 1;
 }
 
-/* Säkerställer att texten ligger över bilden */
 #courses h3,
 #courses p {
   margin-bottom: 20px;
@@ -384,7 +372,6 @@ nav ul li a {
   color: white;
 }
 
-/* Formulär */
 form {
   width: 100%;
   max-width: 500px;
@@ -436,7 +423,6 @@ form textarea {
   background-color: #068104;
 }
 
-/* Knappar */
 #delete {
   margin: 10px;
   padding: 10px 15px;
@@ -539,7 +525,7 @@ form textarea {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-  width: 100%; /* Gör knappen fullbredd */
+  width: 100%;
 }
 
 .log-in-btn:hover {
@@ -605,11 +591,11 @@ footer {
 }
 
 #admin-panel {
-  display: none; /* Dölj administrationspanelen som standard */
+  display: none;
 }
 
 #admin-panel.visible {
-  display: block; /* Visa administrationspanelen när klassen "visible" läggs till */
+  display: block;
 }
 
 .admin-body {
@@ -669,4 +655,54 @@ footer {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .user-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    background-color: #ff6600;
+    padding: 2px 12px;
+    border-radius: 5px;
+    left: 10px;
+    top: 70px;
+    font-weight: bold;
+    color: #f5f4f8;
+    z-index: 3;
+  }
+  #login-btn {
+    margin-top: 110px;
+    background-color: #ff6600;
+    color: #f5f4f8;
+    font-weight: bold;
+    width: 80px;
+    height: 25px;
+    border: none;
+    border-radius: 5px;
+    z-index: 3;
+  }
+  .index-h1 {
+    display: flex;
+    justify-content: center;
+    width: 300px;
+  }
+  .hero-text {
+    margin-top: 50px;
+  }
+  .container {
+    margin-top: 110px;
+  }
+  main {
+    margin-right: 70px;
+    margin-left: 0;
+  }
+  #new-course {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 80%;
+    max-width: 100%;
+  }
 }
