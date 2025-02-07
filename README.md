@@ -41,4 +41,10 @@ För att starta servern, kör följande kommando i terminalen:
 
 npm run start:api
 
-![Startsidan](images/first-page.png)
+| ![Startsidan](images/first-page.png) | ![Kurssidan](images/courses-page.png)
+
+| ![Detaljsidan](images/detail-page.png) | ![Bokningssidan](images/book-page.png)
+
+| ![Bokningssidan](images/login-page.png) | ![Bokningssidan](images/register-page.png)
+
+| ![Bokningssidan](images/addcourse-page.png) | ![Bokningssidan](images/admin-page.png)
